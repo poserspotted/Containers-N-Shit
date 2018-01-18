@@ -10,12 +10,20 @@ public class ContainerDriver {
 		Container<Integer> container1 = new Container<>("CREX", 145678, 14);
 		System.out.println(container1);
 		System.out.println("-----------------------");
-		System.out.println("Testing Display Contents");
+		System.out.println("Testing Display Contents/addContent/removeContent");
 		System.out.println("-----------------------");
+		System.out.println("Should be empty");
 		container1.displayContents();
 		container1.addContent(2);
 		container1.addContent(3);
 		container1.addContent(6);
+		System.out.println("Should be 2, 3, 6");
+		container1.displayContents();
+		container1.removeContent(2);
+		System.out.println("Should be 3, 6");
+		container1.displayContents();
+		container1.removeContent(7);
+		System.out.println("Should be 3, 6");
 		container1.displayContents();
 		System.out.println("-----------------------");
 		System.out.println("Testing isEmpty");
@@ -49,5 +57,13 @@ public class ContainerDriver {
 		System.out.print(container1.equals(container2));
 		System.out.println(" | should be false");
 		System.out.println("-----------------------");
+		System.out.println("Testing contains");
+		System.out.println("-----------------------");
+		System.out.print(container1.contains(2));
+		System.out.println(" | should be true");
+		System.out.print(container1.contains(7));
+		System.out.println(" | should be false");
+		System.out.println("-----------------------");
+		
 	}
 }
