@@ -67,6 +67,25 @@ public class ContainerDriver {
 		System.out.print(container1.contains(7));
 		System.out.println(" | should be false");
 		System.out.println("-----------------------");
+		System.out.println("Testing Inheritance");
+		System.out.println("-----------------------");
+		Container<Integer> container6 = new HazmatContainer<>("BNSF", 293743, 42, 99, "Flammable Gas");
+		Container<Integer> container7 = new HazmatContainer<>("BNSF", 435678, 56, 98, "Inhalation Hazard");
+		System.out.println(container6);
+		container6.displayContents();
+		System.out.println(container7);
+		container7.displayContents();
+		containerList.add(container6);
+		containerList.add(container7);
+		System.out.println("-----------------------");
+		for(Container<Integer> i : containerList) {
+			System.out.println(i);
+		}
+		Collections.sort(containerList);
+		System.out.println("---------Sorted--------");
+		for(Container<Integer> i : containerList) {
+			System.out.println(i);
+		}
 		
 	}
 }
