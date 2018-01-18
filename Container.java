@@ -12,6 +12,7 @@ public class Container<T> implements Comparable<Container<T>> {
 		this.make = make;
 		this.id = id;
 		this.weightTons = weightTons;
+		this.contents = new ArrayList<>();
 		this.contents.add(contents);
 	}
 	
@@ -23,6 +24,7 @@ public class Container<T> implements Comparable<Container<T>> {
 	}
 	public Container(String make, int id, T contents) {
 		this(make, id, DEFAULT_WEIGHT);
+		this.contents = new ArrayList<>();
 		this.contents.add(contents);
 	}
 	public Container(String make, int id) {
@@ -73,9 +75,25 @@ public class Container<T> implements Comparable<Container<T>> {
 		}
 		return false;
 	}
+	public void displayContents() {
+		if(!this.contents.isEmpty()) {
+			for(T i : this.contents) {
+				System.out.println(i);
+			}
+		} else {
+			System.out.println("This container is empty");
+		}
+	}
+	public boolean isEmpty() {
+		if(this.contents.isEmpty()) {
+			return true;
+		} else {
+			return false;
+		}
+	}
 	@Override
 	public String toString() {
-		String s = "Container: " + this.make + " " + this.id + "\nWeight: " + this.weightTons;
+		String s = "Container: " + this.make + " " + this.id + "\nWeight: " + this.weightTons + " Tons";
 		return s;
 	}
 	@Override
