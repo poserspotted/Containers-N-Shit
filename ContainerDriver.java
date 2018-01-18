@@ -56,6 +56,9 @@ public class ContainerDriver {
 		System.out.println("-----------------------");
 		System.out.print(container1.equals(container2));
 		System.out.println(" | should be false");
+		Container<Integer> container5 = new Container<>("GATX", 542853, 17);
+		System.out.print(container3.equals(container5));
+		System.out.println(" | should be true");
 		System.out.println("-----------------------");
 		System.out.println("Testing contains");
 		System.out.println("-----------------------");
