@@ -62,7 +62,7 @@ public class ContainerDriver {
 		System.out.println("-----------------------");
 		System.out.println("Testing contains");
 		System.out.println("-----------------------");
-		System.out.print(container1.contains(2));
+		System.out.print(container1.contains(6));
 		System.out.println(" | should be true");
 		System.out.print(container1.contains(7));
 		System.out.println(" | should be false");
